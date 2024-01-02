@@ -5,12 +5,12 @@ pipeline {
             steps {
                //bat "rmdir  /s /q TicketBookingServiceJunitTesting"
                 //bat "git clone https://github.com/kishancs2020/TicketBookingServiceJunitTesting.git"
-                 mvn clean -f TicketBookingServiceJunitTesting
+                 sh 'mvn clean -f TicketBookingServiceJunitTesting'
             }
         }
         stage('install') {
             steps {
-               mvn install -f TicketBookingServiceJunitTesting
+              sh 'mvn install -f TicketBookingServiceJunitTesting'
             }
         }
         stage('test') {
